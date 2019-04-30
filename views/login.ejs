@@ -1,0 +1,126 @@
+<html>
+  <head>
+    <link
+      href="/css/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <style>
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    .center {
+      margin: auto;
+      width: 60%;
+      padding: 10px;
+    }
+
+    .slideDown {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .resize {
+      width: 30%;
+    }
+  </style>
+  <script type="text/javascript">
+    function validateForm() {
+      var validateUsername = document.forms["Login"]["username"].value;
+      var validatePassword = document.forms["Login"]["password"].value;
+      if (validateUsername == "" && validatePassword == "") {
+        document.getElementById("wrongUsername").style.display = "block";
+        document.getElementById("username").style = "border-color: red;";
+        document.getElementById("wrongPassword").style.display = "block";
+        document.getElementById("password").style = "border-color: red;";
+        return false;
+      } else {
+        if (validateUsername == "") {
+          document.getElementById("wrongUsername").style.display = "block";
+          document.getElementById("username").style = "border-color: red;";
+          document.getElementById("wrongPassword").style.display = "none";
+          document.getElementById("password").style = "";
+          return false;
+        } else if (validatePassword == "") {
+          document.getElementById("wrongPassword").style.display = "block";
+          document.getElementById("password").style = "border-color: red;";
+          document.getElementById("wrongUsername").style.display = "none";
+          document.getElementById("username").style = "";
+          return false;
+        } else {
+          document.getElementById("wrongUsername").style.display = "none";
+          document.getElementById("wrongPassword").style.display = "none";
+          document.getElementById("username").style = "";
+          document.getElementById("password").style = "";
+          document.getElementById("formLogin").action = "/login";
+          return true;
+        }
+      }
+    }
+    function cancel() {
+      document.forms["Login"]["username"].value = "";
+      document.forms["Login"]["password"].value = "";
+    }
+  </script>
+  <div class="container">
+    <div class="center slideDown resize">
+      <center>
+        <h1 style="color: black">Login</h1>
+      </center>
+      <form method="post" name="Login" id="formLogin">
+        <div class="card ">
+          <div class="card-body">
+            <label>Username</label>
+            <input
+              id="username"
+              type="text"
+              name="username"
+              class="form-control"
+              maxlength="15"
+            />
+            <p id="wrongUsername" style="color: red; display: none">
+              กรุณาใส่ username
+            </p>
+            <label>password</label>
+            <input
+              id="password"
+              type="password"
+              name="password"
+              class="form-control"
+              maxlength="15"
+            />
+            <p id="wrongPassword" style="color: red; display: none">
+              กรุณาใส่ password
+            </p>
+            <br />
+            <div class="row">
+              <div class="col-6">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-lg btn-block"
+                  onclick="return validateForm()"
+                >
+                  OK
+                </button>
+              </div>
+              <div class="col-6">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg btn-block"
+                  onclick="cancel()"
+                >
+                  CANCEL
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</html>

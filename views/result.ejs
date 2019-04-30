@@ -1,0 +1,75 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="/css/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"type="text/css"/>
+    <style>
+        body,
+        h1 {
+            font-family: "Raleway", sans-serif
+        }
+
+        body,
+        html {
+            height: 100%
+        }
+
+        .bgimg {
+            min-height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+    </style>
+</head>
+
+<body>  
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        <div class="w3-display-middle w3-card w3-container">
+            <h1 class="w3-jumbo w3-animate-top w3-center" style="color:rgba(0, 0, 0)">
+                User:  <label style="color:rgba(0, 0, 0)"><%= doctype %></label>
+            </h1>
+            <hr class="w3-border-grey" style="margin:auto;width:100%">
+            <div class="form-group w3-xxxlarge w3-animate-top">
+                <label style="color:rgba(0, 0, 0)"><u>ชื่อ-สกุล</u> : </label>
+                <label style="color:rgba(0, 0, 0)"><%= name %></label>
+            </div>
+            <div class="form-group w3-xxxlarge w3-animate-top">
+                    <label style="color:rgba(0, 0, 0)"><u>ตำแหน่งงาน</u> : </label>
+                    <label style="color:rgba(0, 0, 0)"><%= doctype %></label>
+                </div>
+                <div class="form-group w3-xxxlarge w3-animate-top">
+                        <label style="color:rgba(0, 0, 0)"><u>เงินเดือน</u> : </label>
+                        <label style="color:rgba(0, 0, 0)"><%= salary %></label>
+                    </div>
+                    <div class="form-group w3-xxxlarge w3-animate-top">
+                            <label style="color:rgba(0, 0, 0)"><u>เงิน OT</u> : </label>
+                            <label style="color:rgba(0, 0, 0)"><%= ot %></label>
+                        </div> 
+                        <div class="form-group w3-xxxlarge w3-animate-top">
+                                <label style="color:rgba(0, 0, 0)"><u>เงินโบนัส</u>: </label>
+                                <label style="color:rgba(0, 0, 0)"><%= bonus %></label>
+                            </div>
+                            <div class="form-group w3-xxxlarge w3-animate-top">
+                                    <label style="color:rgba(0, 0, 0)"><u>เงินได้สุทธิ</u> : </label>
+                                    <label style="color:rgba(0, 0, 0)"><%= total %></label>
+                                </div>
+
+            <h1>
+                <hr class="w3-border-grey" style="margin:auto;width:100%">
+            </h1>
+
+            <div class="form-group w3-xxxlarge w3-animate-top">
+                <button type="submit"  class="btn btn-primary btn-lg btn-block" onclick="window.history.back();">Back</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
